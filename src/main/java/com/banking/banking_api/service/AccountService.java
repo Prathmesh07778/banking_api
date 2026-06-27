@@ -28,4 +28,15 @@ public class AccountService {
         return  accountRepository.save(account);
 
     }
+
+    public Account updateAccount(Long id, Account account) {
+        account.setId(id);
+        return accountRepository.save(account);
+    }
+
+
+    public String deleteAccount(Long id) {
+        accountRepository.deleteById(id);
+        return "Account deleted successfully";
+    }
 }
